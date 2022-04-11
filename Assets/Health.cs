@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     public event OnRevive onRevive;
 
     private Dictionary<GameObject, float> recentHitters;
-    private float recentHitWindow = 0.15f;
+    private float recentHitWindow = 0.2f;
 
 
     private void Awake()

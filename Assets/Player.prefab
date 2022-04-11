@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackInterval: 1.5
-  activeDuration: 0.25
+  activeDuration: 0.2
   basicAttack: {fileID: 122546166}
 --- !u!114 &806827518969294767
 MonoBehaviour:
@@ -426,6 +426,7 @@ MonoBehaviour:
   myAxis: 0
   movement: {fileID: 0}
   attackTransform: {fileID: 122546168}
+  canAim: 1
 --- !u!114 &5562519313972888507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,7 +454,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reviveRate: 0.0002
   reviveDistance: 1
-  otherPlayer: {fileID: 0}
 --- !u!1 &7033352849283438742
 GameObject:
   m_ObjectHideFlags: 0
