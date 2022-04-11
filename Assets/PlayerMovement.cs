@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
     }
+
     // Update is called once per frame
     void Update()
     {

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4050546317322031574}
   - component: {fileID: 8443306704715613115}
   - component: {fileID: 3073428604872704184}
+  - component: {fileID: 1916194805}
   m_Layer: 0
   m_Name: Aquatic Keisatsu
   m_TagString: Untagged
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f769605e0043f0546ad9f3355e955774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.001
+  speed: 1
 --- !u!114 &8443306704715613115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +169,18 @@ MonoBehaviour:
   currentHP: 3
   isAlive: 1
   vulnerabilities: 01000000
+--- !u!114 &1916194805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050546317322031571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3954c1479cb9c4aa4124800af6bcf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1835344760
 PrefabInstance:
   m_ObjectHideFlags: 0

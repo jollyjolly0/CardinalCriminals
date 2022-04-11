@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
 
         if(closestPlayer != null)
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, closestPlayer.position, speed);
+            rb.velocity = (closestPlayer.position - this.transform.position).normalized * speed;
         }
 
     }
