@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 122546168}
   - component: {fileID: 122546167}
+  - component: {fileID: 4175299049834909745}
   m_Layer: 0
   m_Name: BasicAttack
   m_TagString: Untagged
@@ -83,6 +84,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4175299049834909745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122546166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa967d06d5ab31a4da4f5e334c5bddb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  speed: 10
+  direction: {x: 0, y: 0}
+  attackSource: {fileID: 0}
 --- !u!61 &1137886401
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6672617117885447074}
   - component: {fileID: 3868358793177112875}
+  - component: {fileID: 1006948701646775851}
   - component: {fileID: 6672617117885447072}
   - component: {fileID: 8883010726671992750}
   - component: {fileID: 6672617117885447073}
@@ -265,6 +283,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f0eb89ac36c464ba68afa429b100f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
+--- !u!114 &1006948701646775851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6672617117885447085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb81c2c1a33e95b4d96dade75d7da0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!114 &6672617117885447072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,8 +309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff872e0906a6cf4991d5a49bf4bb574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  speed: 2
 --- !u!114 &8883010726671992750
 MonoBehaviour:
   m_ObjectHideFlags: 0

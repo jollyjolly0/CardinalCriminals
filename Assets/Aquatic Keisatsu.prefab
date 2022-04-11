@@ -12,10 +12,13 @@ GameObject:
   - component: {fileID: 4050546317322031568}
   - component: {fileID: 4050546317322031572}
   - component: {fileID: 4050546317322031575}
+  - component: {fileID: 2022111482}
   - component: {fileID: 4050546317322031574}
   - component: {fileID: 8443306704715613115}
   - component: {fileID: 3073428604872704184}
   - component: {fileID: 1916194805}
+  - component: {fileID: 2022111481}
+  - component: {fileID: 9011991939483911222}
   m_Layer: 0
   m_Name: Aquatic Keisatsu
   m_TagString: Untagged
@@ -127,6 +130,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2022111482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050546317322031571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb81c2c1a33e95b4d96dade75d7da0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!114 &4050546317322031574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f769605e0043f0546ad9f3355e955774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
 --- !u!114 &8443306704715613115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +194,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a3954c1479cb9c4aa4124800af6bcf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2022111481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050546317322031571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa967d06d5ab31a4da4f5e334c5bddb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  speed: 5
+  direction: {x: 0, y: 0}
+  attackSource: {fileID: 0}
+--- !u!114 &9011991939483911222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050546317322031571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd1abfeb71f99a438ea4c445c113e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1835344760

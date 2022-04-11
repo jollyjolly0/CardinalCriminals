@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class HitBox : MonoBehaviour
 {
-    public Attack attack;
+    private Attack attack;
 
     private void Start()
     {
-        attack.attackSource = gameObject.transform.root.gameObject;
+        //attack.attackSource = gameObject.transform.root.gameObject;
     }
+
+    public void SetAttack(Attack attack)
+    {
+        this.attack = attack;
+    }
+
 
 
     private void OnTriggerStay2D(Collider2D collision)
