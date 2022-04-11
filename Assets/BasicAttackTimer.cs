@@ -20,11 +20,16 @@ public class BasicAttackTimer : MonoBehaviour
     {
         StartAttacking();
         health.onDeath += OnDeath;
+        health.onRevive += OnRevive;
     }
 
     private void OnDeath()
     {
         StopAttacking();
+    }
+    private void OnRevive()
+    {
+        StartAttacking();
     }
 
     void StartAttacking()
@@ -40,7 +45,7 @@ public class BasicAttackTimer : MonoBehaviour
 
     IEnumerator AttackRoutine()
     {
-        while (true)
+        while (health.isAlive)
         {
             basicAttack.SetActive(false);
             yield return new WaitForSeconds(attackInterval - activeDuration);
@@ -50,7 +55,6 @@ public class BasicAttackTimer : MonoBehaviour
             yield return new WaitForSeconds(activeDuration);
 
             basicAttack.SetActive(false);
-
         }
     }
 

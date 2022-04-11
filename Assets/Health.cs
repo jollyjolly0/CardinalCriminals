@@ -94,6 +94,7 @@ public class Health : MonoBehaviour
 
     public void Revive()
     {
+        Debug.Log("Revived");
         isAlive = true;
         onRevive?.Invoke();
     }
