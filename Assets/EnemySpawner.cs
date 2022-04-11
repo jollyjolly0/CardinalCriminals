@@ -8,6 +8,10 @@ public class EnemySpawner : MonoBehaviour
     public float spawnInterval;
     public float lastSpawn;
 
+    public float rampInterval;
+    public float rampRatio;
+    private float lastRamp;
+
     public float xRange;
     public float yRange;
 
@@ -17,10 +21,15 @@ public class EnemySpawner : MonoBehaviour
     }
     private void Update()
     {
-        if (Time.time - lastSpawn > spawnInterval)
+        if (Time.time > spawnInterval + lastSpawn)
         {
             SpawnEnemy(spawnPostion());
             lastSpawn = Time.time;
+        }
+        if(Time.time>rampInterval+lastRamp)
+        {
+            spawnInterval *= rampRatio;
+            lastRamp = Time.time;
         }
     }
 

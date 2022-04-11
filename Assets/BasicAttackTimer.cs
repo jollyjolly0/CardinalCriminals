@@ -9,8 +9,25 @@ public class BasicAttackTimer : MonoBehaviour
 
     public GameObject basicAttack;
 
+    private Health health;
+
+    private void Awake()
+    {
+        health = GetComponent<Health>();
+    }
 
     private void Start()
+    {
+        StartAttacking();
+        health.onDeath += OnDeath;
+        health.onRevive += OnRevive;
+    }
+
+    private void OnDeath()
+    {
+        StopAttacking();
+    }
+    private void OnRevive()
     {
         StartAttacking();
     }
@@ -28,9 +45,8 @@ public class BasicAttackTimer : MonoBehaviour
 
     IEnumerator AttackRoutine()
     {
-        while (true)
+        while (health.isAlive)
         {
-
             basicAttack.SetActive(false);
             yield return new WaitForSeconds(attackInterval - activeDuration);
 
@@ -39,9 +55,7 @@ public class BasicAttackTimer : MonoBehaviour
             yield return new WaitForSeconds(activeDuration);
 
             basicAttack.SetActive(false);
-
         }
-
     }
 
 

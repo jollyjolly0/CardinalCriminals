@@ -16,6 +16,9 @@ public class Health : MonoBehaviour
     public delegate void OnDeath();
     public event OnDeath onDeath;
 
+    public delegate void OnRevive();
+    public event OnRevive onRevive;
+
     private Dictionary<GameObject, float> recentHitters;
     private float recentHitWindow = 0.15f;
 
@@ -95,6 +98,14 @@ public class Health : MonoBehaviour
     private void AddRecentHit(GameObject hitter)
     {
         recentHitters[hitter] = Time.time;
+    }
+
+
+    public void Revive()
+    {
+        Debug.Log("Revived");
+        isAlive = true;
+        onRevive?.Invoke();
     }
 
 
