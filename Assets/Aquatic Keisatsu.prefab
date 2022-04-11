@@ -165,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5911bee67cf46214a9eff8be2e475790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 3
-  currentHP: 3
+  maxHP: 4
+  currentHP: 4
   isAlive: 1
   vulnerabilities: 01000000
 --- !u!114 &1916194805

@@ -188,8 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5911bee67cf46214a9eff8be2e475790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1
-  currentHP: 1
+  maxHP: 10
+  currentHP: 10
   isAlive: 1
   vulnerabilities: 0000000001000000
 --- !u!212 &6672617117885447073
@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548402803649759920, guid: d6cba4f5a68b5164088c1a1667645642, type: 3}
       propertyPath: attack.damage
-      value: 200
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4626100645940998940, guid: d6cba4f5a68b5164088c1a1667645642, type: 3}

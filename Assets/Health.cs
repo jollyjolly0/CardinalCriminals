@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     public event OnDeath onDeath;
 
     private Dictionary<GameObject, float> recentHitters;
-    private float recentHitWindow = 0.1f;
+    private float recentHitWindow = 0.15f;
 
 
     private void Awake()
@@ -41,23 +41,36 @@ public class Health : MonoBehaviour
 
     private void Box_onHit(Attack attack)
     {
-
-
-
         DamageSource dSource = attack.attackSource.GetComponent<DamageSource>();
         if (null != dSource && vulnerabilities.Contains(dSource.source))
         {
             if (!WasHitRecently(attack.attackSource))
             {
-
-
                 AddRecentHit(attack.attackSource);
 
-                Die();
-                Debug.Log("FU*K");
+                GetHit(attack);
+
             }
         }
     }
+
+
+    private void GetHit(Attack attack)
+    {
+        currentHP = currentHP - attack.damage;
+
+        if(currentHP <= 0)
+        {
+            currentHP = 0;
+            Die();
+        }
+    }
+    private void Die()
+    {
+        isAlive = false;
+        onDeath?.Invoke();
+    }
+
 
 
     private bool WasHitRecently(GameObject hitter)
@@ -70,7 +83,7 @@ public class Health : MonoBehaviour
 
         float lastHit = recentHitters[hitter];
 
-        if(Time.time  > recentHitWindow + lastHit)
+        if (Time.time > recentHitWindow + lastHit)
         {
             return false;
         }
@@ -79,19 +92,10 @@ public class Health : MonoBehaviour
         return true;
 
     }
-    private void  AddRecentHit(GameObject hitter)
+    private void AddRecentHit(GameObject hitter)
     {
         recentHitters[hitter] = Time.time;
     }
-
-
-
-    public void Die()
-    {
-        isAlive = false;
-        onDeath?.Invoke();
-    }
-
 
 
 }
