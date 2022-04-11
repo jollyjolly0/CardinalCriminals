@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1992629130191038310}
   - component: {fileID: 3530891011144378411}
   - component: {fileID: 8433463105147067425}
+  - component: {fileID: 7004007586411332723}
   m_Layer: 0
   m_Name: DonutPatrol
   m_TagString: Untagged
@@ -140,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f769605e0043f0546ad9f3355e955774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &4912468540015518821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +196,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runDuration: 1
   restDuration: 2
+--- !u!114 &7004007586411332723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663806783062062605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb81c2c1a33e95b4d96dade75d7da0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1001 &1869654611509473081
 PrefabInstance:
   m_ObjectHideFlags: 0
