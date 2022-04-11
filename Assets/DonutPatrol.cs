@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DonutPatrol : MonoBehaviour
 {
-    EnemyMovement movement;
+    Movement movement;
 
     public float runDuration;
     public float restDuration;
@@ -13,7 +13,7 @@ public class DonutPatrol : MonoBehaviour
 
     private void Awake()
     {
-        movement = GetComponent<EnemyMovement>();
+        movement = GetComponent<Movement>();
     }
 
     private void Start()
