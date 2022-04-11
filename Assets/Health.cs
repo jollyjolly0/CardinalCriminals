@@ -16,6 +16,9 @@ public class Health : MonoBehaviour
     public delegate void OnDeath();
     public event OnDeath onDeath;
 
+    public delegate void OnRevive();
+    public event OnRevive onRevive;
+
     private Dictionary<GameObject, float> recentHitters;
     private float recentHitWindow = 0.1f;
 
@@ -41,9 +44,6 @@ public class Health : MonoBehaviour
 
     private void Box_onHit(Attack attack)
     {
-
-
-
         DamageSource dSource = attack.attackSource.GetComponent<DamageSource>();
         if (null != dSource && vulnerabilities.Contains(dSource.source))
         {
@@ -90,6 +90,12 @@ public class Health : MonoBehaviour
     {
         isAlive = false;
         onDeath?.Invoke();
+    }
+
+    public void Revive()
+    {
+        isAlive = true;
+        onRevive?.Invoke();
     }
 
 

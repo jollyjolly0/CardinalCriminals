@@ -47,6 +47,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 4050546317322031571, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
   spawnInterval: 20
   lastSpawn: 0
+  rampInterval: 20
+  rampRatio: 0.8
   xRange: 8
   yRange: 1
 --- !u!61 &2031871553

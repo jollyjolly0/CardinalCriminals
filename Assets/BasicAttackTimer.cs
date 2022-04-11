@@ -9,10 +9,22 @@ public class BasicAttackTimer : MonoBehaviour
 
     public GameObject basicAttack;
 
+    private Health health;
+
+    private void Awake()
+    {
+        health = GetComponent<Health>();
+    }
 
     private void Start()
     {
         StartAttacking();
+        health.onDeath += OnDeath;
+    }
+
+    private void OnDeath()
+    {
+        StopAttacking();
     }
 
     void StartAttacking()
@@ -30,7 +42,6 @@ public class BasicAttackTimer : MonoBehaviour
     {
         while (true)
         {
-
             basicAttack.SetActive(false);
             yield return new WaitForSeconds(attackInterval - activeDuration);
 
@@ -41,7 +52,6 @@ public class BasicAttackTimer : MonoBehaviour
             basicAttack.SetActive(false);
 
         }
-
     }
 
 
