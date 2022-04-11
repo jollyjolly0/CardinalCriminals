@@ -2,36 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour , IHeadingProvider
 {
     private static Player[] players;
 
-    public float speed;
-    Rigidbody2D rb;
-
     private void Awake()
     {
-        rb = this.GetComponent<Rigidbody2D>();
-
         players = FindObjectsOfType<Player>();
 
     }
 
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        Transform closestPlayer = ClosestPlayer();
-
-        if(closestPlayer != null)
-        {
-            rb.velocity = (closestPlayer.position - this.transform.position).normalized * speed;
-        }
-
-    }
 
     public Transform ClosestPlayer()
     {
@@ -53,5 +34,17 @@ public class EnemyMovement : MonoBehaviour
         }
 
         return closestPlayer;
+    }
+
+    public Vector2 GetHeading()
+    {
+        Transform closestPlayer = ClosestPlayer();
+
+        if (closestPlayer != null)
+        {
+            return (closestPlayer.position - this.transform.position).normalized;
+        }
+        return Vector2.zero;
+
     }
 }

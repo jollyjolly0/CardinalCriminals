@@ -19,6 +19,8 @@ public class Health : MonoBehaviour
     public delegate void OnRevive();
     public event OnRevive onRevive;
 
+    public OnHitEvent onHurt;
+
     private Dictionary<GameObject, float> recentHitters;
     private float recentHitWindow = 0.2f;
 
@@ -31,7 +33,7 @@ public class Health : MonoBehaviour
 
         foreach (var box in hurtboxes)
         {
-            box.onHit += Box_onHit;
+            box.onHurtBoxStruck += Box_onHit;
         }
 
         if(hurtboxes.Length == 0)
@@ -60,6 +62,8 @@ public class Health : MonoBehaviour
 
     private void GetHit(Attack attack)
     {
+        onHurt?.Invoke(attack);
+
         currentHP = currentHP - attack.damage;
 
         if(currentHP <= 0)
