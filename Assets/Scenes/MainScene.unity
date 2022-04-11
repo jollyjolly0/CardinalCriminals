@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1235195267186438936, guid: 2a0e1c83822369b499372c5d408a189c, type: 3}
       propertyPath: lastSpawn
-      value: -10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 1235195267186438936, guid: 2a0e1c83822369b499372c5d408a189c, type: 3}
       propertyPath: spawnInterval
@@ -415,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1235195267186438936, guid: 2a0e1c83822369b499372c5d408a189c, type: 3}
       propertyPath: lastSpawn
-      value: 5
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1235195267186438936, guid: 2a0e1c83822369b499372c5d408a189c, type: 3}
       propertyPath: spawnInterval
@@ -561,6 +561,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 806827518969294767, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
+      propertyPath: myAxis
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6672617117885447072, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: playerNumber
       value: 1
@@ -656,7 +660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1235195267186438936, guid: 2a0e1c83822369b499372c5d408a189c, type: 3}
       propertyPath: lastSpawn
-      value: -5
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1235195267186438936, guid: 2a0e1c83822369b499372c5d408a189c, type: 3}
       propertyPath: spawnInterval
@@ -1125,7 +1129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672617117885447074, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6672617117885447074, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: m_LocalPosition.z
