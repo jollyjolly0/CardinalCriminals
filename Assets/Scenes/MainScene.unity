@@ -608,6 +608,10 @@ PrefabInstance:
       propertyPath: myAxis
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3868358793177112875, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6672617117885447072, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: playerNumber
       value: 1
