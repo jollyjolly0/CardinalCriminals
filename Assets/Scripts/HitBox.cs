@@ -8,15 +8,18 @@ public class HitBox : MonoBehaviour
 
     private void Start()
     {
-        attack.attackSource = gameObject.transform.parent.gameObject;
+        attack.attackSource = gameObject.transform.root.gameObject;
     }
 
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        
+
         var hurtbox = collision.gameObject.GetComponent<HurtBox>();
         if (hurtbox != null)
         {
+            //if (collision.transform.parent.gameObject == attack.attackSource) { return; }
             hurtbox.RecieveHit(attack);
         }
     }

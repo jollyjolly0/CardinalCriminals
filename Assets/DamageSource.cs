@@ -6,7 +6,8 @@ public class DamageSource : MonoBehaviour
 {
     public enum Source
     {
-        Enemy
+        Enemy,
+        Player
     }
 
     public Source source;
