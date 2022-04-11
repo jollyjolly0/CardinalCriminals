@@ -519,11 +519,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
---- !u!4 &948472918 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6672617117885447074, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
-  m_PrefabInstance: {fileID: 466035884}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1793982893
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,11 +619,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &1802699370 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6672617117885447074, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
-  m_PrefabInstance: {fileID: 6672617116156541384}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2108592091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -765,38 +755,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aquatic Keisatsu
       objectReference: {fileID: 0}
-    - target: {fileID: 4050546317322031572, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4050546317322031572, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4050546317322031572, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
-      propertyPath: m_LinearDrag
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4050546317322031572, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4050546317322031572, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4050546317322031572, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4050546317322031574, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
-      propertyPath: players.Array.data[0]
-      value: 
-      objectReference: {fileID: 1802699370}
-    - target: {fileID: 4050546317322031574, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
-      propertyPath: players.Array.data[1]
-      value: 
-      objectReference: {fileID: 948472918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
 --- !u!1001 &6672617116156541384

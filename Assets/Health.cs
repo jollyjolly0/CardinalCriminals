@@ -4,28 +4,54 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+
+    public int maxHP;
+    public int currentHP;
+
+    public bool isAlive;
+
     public List<DamageSource.Source> vulnerabilities;
-    private PlayerStatus ps;
+
+
+    public delegate void OnDeath();
+    public event OnDeath onDeath;
+
 
     private void Awake()
     {
-        ps = GetComponent<PlayerStatus>();
+        var hurtboxes = GetComponentsInChildren<HurtBox>();
+
+        foreach (var box in hurtboxes)
+        {
+            box.onHit += Box_onHit;
+        }
+
+        if(hurtboxes.Length == 0)
+        {
+            Debug.LogWarning("Did you forget to add a hurtbox to me?");
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Box_onHit(Attack attack)
     {
-        DamageSource dSource = collision.gameObject.GetComponent<DamageSource>();
+
+        DamageSource dSource = attack.attackSource.GetComponent<DamageSource>();
         if (null != dSource)
         {
-            if(vulnerabilities.Contains(dSource.source))
+            if (vulnerabilities.Contains(dSource.source))
             {
-                if(null != ps)
-                {
-                    ps.Die();
-                }
-                
+                Die();
                 Debug.Log("FU*K");
             }
         }
     }
+
+    public void Die()
+    {
+        isAlive = false;
+        onDeath.Invoke();
+    }
+
+
+
 }
