@@ -23,8 +23,13 @@ public class BasicAttackAimer : MonoBehaviour
     const float offset = 2.5f;
     const float scaleLong = 3f;
     const float scaleShort = 2f;
+
+    [HideInInspector]
+    public bool canAim = true;
     private void Update()
     {
+        if (!canAim) { return; }
+
         if (myAxis == AimAxis.horizontal)
         {
             if (Input.GetAxisRaw("Horizontal1") < 0)

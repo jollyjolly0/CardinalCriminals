@@ -10,10 +10,12 @@ public class BasicAttackTimer : MonoBehaviour
     public GameObject basicAttack;
 
     private Health health;
+    private BasicAttackAimer aimer;
 
     private void Awake()
     {
         health = GetComponent<Health>();
+        aimer = GetComponent<BasicAttackAimer>();
     }
 
     private void Start()
@@ -47,9 +49,12 @@ public class BasicAttackTimer : MonoBehaviour
     {
         while (health.isAlive)
         {
+            aimer.canAim = true;
+
             basicAttack.SetActive(false);
             yield return new WaitForSeconds(attackInterval - activeDuration);
 
+            aimer.canAim = false;
             basicAttack.SetActive(true);
 
             yield return new WaitForSeconds(activeDuration);

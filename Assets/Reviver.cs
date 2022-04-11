@@ -8,18 +8,42 @@ public class Reviver : MonoBehaviour
 
     public float reviveDistance;
 
-    public Health otherPlayer;
+    //public Health otherPlayer;
+
+
+    List<Revivee> revivees;
+    private void Start()
+    {
+
+        revivees = new List<Revivee>();
+        var tmp = FindObjectsOfType<Revivee>();
+
+
+        foreach (var player in tmp)
+        {
+            if(player.gameObject != gameObject)
+            {
+                revivees.Add(player);
+            }
+        }
+
+    }
 
     private void Update()
     {
-        if(otherPlayer.isAlive)
+        foreach (var otherPlayer in revivees)
         {
-            return;
+            if (otherPlayer.GetComponent<Health>().isAlive)
+            {
+                return;
+            }
+            float distance = Vector3.Distance(transform.position, otherPlayer.transform.position);
+            if (distance < reviveDistance)
+            {
+                otherPlayer.ReviveAmount(reviveRate);
+            }
         }
-        float distance = Vector3.Distance(transform.position, otherPlayer.transform.position);
-        if(distance<reviveDistance)
-        {
-            otherPlayer.GetComponent<Revivee>().ReviveAmount(reviveRate);
-        }
+
+
     }
 }
