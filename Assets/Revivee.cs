@@ -42,9 +42,9 @@ public class Revivee : MonoBehaviour
             }
         }
     }
-    public void ReviveAmount(float amount)
+    public void ReviveAmount(float percentPerSecond)
     {
-        Debug.Log($"Amount: {amount}");
+        float amount = percentPerSecond * Time.deltaTime;
         revivePercent += amount;
     }
 }

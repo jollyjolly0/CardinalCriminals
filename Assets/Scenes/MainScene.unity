@@ -831,6 +831,10 @@ PrefabInstance:
       propertyPath: levelUpTimer
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 2184379011040610173, guid: 20e79592c17edb944a48c491d2fbdbb0, type: 3}
+      propertyPath: reviveRate
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5467570725320104295, guid: 20e79592c17edb944a48c491d2fbdbb0, type: 3}
       propertyPath: m_Name
       value: Player2
@@ -888,6 +892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 660105353222038967, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
+      propertyPath: reviveRate
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 660105353222038967, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: otherPlayer
       value: 
