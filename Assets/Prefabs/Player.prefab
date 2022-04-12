@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 660105353222038967}
   - component: {fileID: 225595654726106105}
   - component: {fileID: 1720703438420419874}
+  - component: {fileID: 1130953731154754532}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -665,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75270a40a86b7b469033998333d66c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reviveRate: 0.0002
+  reviveRate: 0.0005
   reviveDistance: 1
 --- !u!114 &225595654726106105
 MonoBehaviour:
@@ -692,6 +693,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9028f8e2dc7b64c9204e48b750c17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1130953731154754532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6672617117885447085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09495d5aa9d1e884780b4d7b53c3181f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 8883010726671992750}
+  movement: {fileID: 1006948701646775851}
+  attack: {fileID: 4175299049834909745}
+  reviver: {fileID: 660105353222038967}
+  levelUpImage: {fileID: 0}
+  levelUpTimer: 60
 --- !u!1 &7033352849283438742
 GameObject:
   m_ObjectHideFlags: 0
