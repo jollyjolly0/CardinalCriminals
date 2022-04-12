@@ -80,6 +80,8 @@ public class Health : MonoBehaviour
 
     private void GetHit(Attack attack)
     {
+        if (!isAlive)
+            return;
         onHurt?.Invoke(attack);
 
         currentHP = currentHP - attack.damage;

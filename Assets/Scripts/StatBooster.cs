@@ -10,6 +10,11 @@ public class StatBooster : MonoBehaviour
     public Attack attack;
     public Reviver reviver;
 
+    public int healthIncrement;
+    public float movementIncrement;
+    public int attackIncrement;
+    public float reviveIncrement;
+
     public int hpRestore;
 
     private bool axisReset = true;
@@ -99,16 +104,16 @@ public class StatBooster : MonoBehaviour
         switch (toLevel)
         {
             case Stat.atk:
-                IncreaseAttack();
+                IncreaseAttack(attackIncrement);
                 break;
             case Stat.hp:
-                IncreaseHealth();
+                IncreaseHealth(healthIncrement);
                 break;
             case Stat.mov:
-                IncreaseMovement();
+                IncreaseMovement(movementIncrement);
                 break;
             case Stat.rev:
-                IncreaseReviver();
+                IncreaseReviver(reviveIncrement);
                 break;
         }
     }

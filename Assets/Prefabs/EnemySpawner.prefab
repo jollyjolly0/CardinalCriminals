@@ -46,17 +46,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 4050546317322031571, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
+  - {fileID: 4050546317322031571, guid: 35d0630f10f31204ca86f744063bbd99, type: 3}
+  - {fileID: 663806783062062605, guid: 3318205f3b3320b4fbd905f59692d356, type: 3}
   - {fileID: 663806783062062605, guid: 3318205f3b3320b4fbd905f59692d356, type: 3}
   - {fileID: 8423965574860181751, guid: 677b3abb99ed4ad4db6306a71f3c9a07, type: 3}
   weightsArray:
   - 1
+  - 1
   - 3
-  - 10
+  - 3
+  - 20
   spawnInterval: 5
   lastSpawn: 0
   rampInterval: 20
   rampRatio: 0
-  rampScale: 1.5
+  rampScale: 1
   northYVal: 11
   northXMin: -11
   northXMax: 11
