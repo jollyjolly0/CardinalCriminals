@@ -48,13 +48,16 @@ public class StatBooster : MonoBehaviour
             LevelUp();
             lastLevelUpTime = Time.time;
         }
-        if(skillPointsAvailable>0)
+        if (skillPointsAvailable > 0)
         {
             ChooseBoost();
         }
         else
         {
-            levelUpImage.enabled = false;
+            if (null != levelUpImage)
+            {
+                levelUpImage.enabled = false;
+            }
         }
     }
 
@@ -96,8 +99,11 @@ public class StatBooster : MonoBehaviour
 
     void LevelUp()
     {
-        Debug.Log("LEVEL");
-        levelUpImage.enabled = true;
+        Debug.Log("LEVEL"); 
+        if (null != levelUpImage)
+        {
+            levelUpImage.enabled = true;
+        }
         skillPointsAvailable++;
     }
     private void IncreaseHealth(int amount = 1)
