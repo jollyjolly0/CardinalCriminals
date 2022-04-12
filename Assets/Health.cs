@@ -29,17 +29,20 @@ public class Health : MonoBehaviour
     {
         recentHitters = new Dictionary<GameObject, float>();
 
-        var hurtboxes = GetComponentsInChildren<HurtBox>();
+        var hurtboxes = GetComponentInChildren<HurtBox>();
+        hurtboxes.onHurtBoxStruck += Box_onHit;
 
-        foreach (var box in hurtboxes)
-        {
-            box.onHurtBoxStruck += Box_onHit;
-        }
+        /*
+    foreach (var box in hurtboxes)
+    {
+        box.onHurtBoxStruck += Box_onHit;
+    }
 
-        if(hurtboxes.Length == 0)
+        if (hurtboxes.Length == 0)
         {
             Debug.LogWarning("Did you forget to add a hurtbox to me?");
         }
+        */
     }
 
 

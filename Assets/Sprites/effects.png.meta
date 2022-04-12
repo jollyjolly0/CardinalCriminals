@@ -5,6 +5,18 @@ TextureImporter:
   - first:
       213: 6609894105642088411
     second: effect_punch
+  - first:
+      213: 1957107745717523172
+    second: ShieldHit_0
+  - first:
+      213: -3914910146244942373
+    second: ShieldHit_1
+  - first:
+      213: -1166211891172804109
+    second: ShieldHit_2
+  - first:
+      213: 1274422669862156747
+    second: ShieldHit_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +56,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -114,7 +126,7 @@ TextureImporter:
         width: 352
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,6 +134,90 @@ TextureImporter:
       bones: []
       spriteID: bd7beb91baf0bbb50800000000000000
       internalID: 6609894105642088411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldHit_0
+      rect:
+        serializedVersion: 2
+        x: 3526
+        y: 209
+        width: 19
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5143272, y: 0.45925292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e298a2202b092b10800000000000000
+      internalID: 1957107745717523172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldHit_1
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 203
+        width: 29
+        height: 31
+      alignment: 9
+      pivot: {x: 0.56558967, y: 0.48685628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd56f7dc6f17ba9c0800000000000000
+      internalID: -3914910146244942373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldHit_2
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 189
+        width: 36
+        height: 59
+      alignment: 9
+      pivot: {x: 0.55048287, y: 0.49075964}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9fecdb678c0dfe0800000000000000
+      internalID: -1166211891172804109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldHit_3
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 182
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9b6d28aa8afa110800000000000000
+      internalID: 1274422669862156747
       vertices: []
       indices: 
       edges: []
