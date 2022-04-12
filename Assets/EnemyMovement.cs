@@ -4,30 +4,35 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour , IHeadingProvider
 {
-    private static Player[] players;
+    private static EnemyTarget[] targets;
 
-    private void Awake()
+
+    private void ScanForTargets()
     {
-        players = FindObjectsOfType<Player>();
-
+        targets = FindObjectsOfType<EnemyTarget>();
     }
 
-
-
+    private float timeBetweenScans = 0.2f;
+    private float lastScan = Mathf.NegativeInfinity;
     public Transform ClosestPlayer()
     {
+        if(Time.time > lastScan + timeBetweenScans)
+        {
+            ScanForTargets();
+        }
+
         float minDist = Mathf.Infinity;
         Transform closestPlayer = null;
-        foreach (var player in players)
+        foreach (var target in targets)
         {
 
-            if (player.GetComponent<Health>().isAlive)
+            if (target.IsTargetable())
             {
-                float distance = Vector3.Distance(this.transform.position, player.transform.position);
+                float distance = Vector3.Distance(this.transform.position, target.transform.position);
                 if(distance < minDist)
                 {
                     minDist = distance;
-                    closestPlayer = player.transform;
+                    closestPlayer = target.transform;
                 }
             }
 

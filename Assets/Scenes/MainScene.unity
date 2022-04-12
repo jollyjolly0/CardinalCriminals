@@ -287,7 +287,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8883010726671992750, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
   m_PrefabInstance: {fileID: 6672617116156541384}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1782511662}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5911bee67cf46214a9eff8be2e475790, type: 3}
@@ -538,6 +538,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 225595654726106105, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
+      propertyPath: ability
+      value: 
+      objectReference: {fileID: 11400000, guid: 730f753a2baf1d044bd4a2f295758541, type: 2}
     - target: {fileID: 660105353222038967, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: otherPlayer
       value: 
@@ -629,6 +633,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5911bee67cf46214a9eff8be2e475790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1782511662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6672617117885447085, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
+  m_PrefabInstance: {fileID: 6672617116156541384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1782511663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782511662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9028f8e2dc7b64c9204e48b750c17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1793982893
@@ -795,10 +816,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 225595654726106105, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
-      propertyPath: ability
-      value: 
-      objectReference: {fileID: 11400000, guid: b17c762e68d76e14697bbc6b0fc0fd8d, type: 2}
     - target: {fileID: 660105353222038967, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: otherPlayer
       value: 
