@@ -10,6 +10,10 @@ public class StatBooster : MonoBehaviour
     public Attack attack;
     public Reviver reviver;
 
+    public int hpRestore;
+
+    private bool axisReset = true;
+
     enum Stat
     {
         none,
@@ -50,7 +54,14 @@ public class StatBooster : MonoBehaviour
         }
         if (skillPointsAvailable > 0)
         {
-            ChooseBoost();
+            if (axisReset)
+            {
+                ChooseBoost();
+            }
+            else if(Mathf.Abs(Input.GetAxisRaw(horizontalAxisName))<.1f && Mathf.Abs(Input.GetAxisRaw(verticalAxisName)) < .1f)
+            {
+                axisReset = true;
+            }
         }
         else
         {
@@ -64,6 +75,7 @@ public class StatBooster : MonoBehaviour
     void ChooseBoost()
     {
         Stat toLevel = Stat.none;
+        axisReset = false;
         if (Input.GetAxisRaw(horizontalAxisName) >.5f)
         {
             toLevel = Stat.atk;
@@ -79,6 +91,10 @@ public class StatBooster : MonoBehaviour
         else if(Input.GetAxisRaw(verticalAxisName) < -.5f)
         {
             toLevel = Stat.rev;
+        }
+        else
+        {
+            axisReset = true;
         }
         switch (toLevel)
         {
@@ -105,6 +121,7 @@ public class StatBooster : MonoBehaviour
             levelUpImage.enabled = true;
         }
         skillPointsAvailable++;
+        health.currentHP += hpRestore;
     }
     private void IncreaseHealth(int amount = 1)
     {
