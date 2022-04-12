@@ -20,6 +20,7 @@ public class AbilityUser : MonoBehaviour
 
         health = GetComponent<Health>();
 
+        lastUsedAt = new float[2];
         for (int i = 0; i < 2; i++)
         {
             lastUsedAt[i] = Mathf.NegativeInfinity;
