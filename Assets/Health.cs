@@ -14,11 +14,9 @@ public class Health : MonoBehaviour
         }
         set {
             _currentHP = value;
-            if (null != healthbarFill) {
+            if (null != uiHealthbar) {
                 float fillAmount = (float)_currentHP / maxHP;
-                healthbarFill.fillAmount = fillAmount;
-                healthbar.gameObject.SetActive(fillAmount < 1);
-                healthbarDeath.gameObject.SetActive(fillAmount <= 0);
+                uiHealthbar.fill = fillAmount;
             }
         }
     }
@@ -27,9 +25,7 @@ public class Health : MonoBehaviour
 
     public List<DamageSource.Source> vulnerabilities;
 
-    public Image healthbar;
-    public Image healthbarFill;
-    public Image healthbarDeath;
+    public UIHealthbar uiHealthbar;
 
     public delegate void OnDeath();
     public event OnDeath onDeath;
