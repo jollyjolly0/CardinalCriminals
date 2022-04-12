@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class AbilityUser : MonoBehaviour
 {
-    public BaseAbility ability;
+    public BaseAbility[] ability;
 
-    string inputButton;
+    string inputButtonA;
+    string inputButtonB;
 
     Health health;
 
     private void Awake()
     {
-        inputButton = "Ability" + GetComponent<Player>().playerNumber.ToString();
+        inputButtonA = "AbilityA" + GetComponent<Player>().playerNumber.ToString();
+        inputButtonB = "AbilityB" + GetComponent<Player>().playerNumber.ToString();
 
         health = GetComponent<Health>();
     }
@@ -21,21 +23,24 @@ public class AbilityUser : MonoBehaviour
     {
         if (!health.isAlive) { return;  }
 
-        if (Input.GetButtonDown(inputButton))
+        if (Input.GetButtonDown(inputButtonA))
         {
-            TryUseAbility();
+            TryUseAbility(0);
+        }
+        if (Input.GetButtonDown(inputButtonB))
+        {
+            TryUseAbility(1);
         }
     }
 
     private float lastUsedAt = Mathf.NegativeInfinity;
-    private void TryUseAbility()
+    private void TryUseAbility(int abilitynum)
     {
-        if (Time.time > lastUsedAt + ability.cooldown)
+        if (Time.time > lastUsedAt + ability[abilitynum].cooldown)
         {
             lastUsedAt = Time.time;
 
-            ability?.UseAbility(gameObject);
-            if (!ability) { Debug.LogWarning("no ability bound"); }
+            ability[abilitynum]?.UseAbility(gameObject);
         }
      }
 

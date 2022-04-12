@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 11400000, guid: 730f753a2baf1d044bd4a2f295758541, type: 2}
+    - target: {fileID: 225595654726106105, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
+      propertyPath: ability.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 730f753a2baf1d044bd4a2f295758541, type: 2}
     - target: {fileID: 660105353222038967, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: otherPlayer
       value: 
@@ -117,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6672617117885447085, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: Player2 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}

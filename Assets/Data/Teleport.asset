@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c734dcc5b7cce438a6972c1e79b304, type: 3}
+  m_Name: Teleport
+  m_EditorClassIdentifier: 
+  cooldown: 10
+  HeliLandingPrefab: {fileID: 6854014697245933937, guid: a0e15e1abf3d3d642862cf25de0794bb, type: 3}

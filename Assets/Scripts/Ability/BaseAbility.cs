@@ -13,10 +13,7 @@ public class BaseAbility : ScriptableObject
 
     public void UseAbility(GameObject owner)
     {
-
         ActivateAbility(owner);
-        
-
     }
 
     protected virtual void ActivateAbility(GameObject owner)
