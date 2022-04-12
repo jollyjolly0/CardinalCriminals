@@ -9,15 +9,24 @@ public class StatBooster : MonoBehaviour
     public Movement movement;
     public Attack attack;
     public Reviver reviver;
+    public BasicAttackTimer basicAttackTimer;
+    public AbilityUser abilityUser;
 
     public int healthIncrement;
     public float movementIncrement;
     public int attackIncrement;
     public float reviveIncrement;
 
+    public float levelRateIncrement;
+    public float abilityCDIncrement;
+    public float attackIntervalIncrement;
+    public int reviveDistanceIncrement;
+
     public int hpRestore;
 
     private bool axisReset = true;
+
+    private int level = 1;
 
     enum Stat
     {
@@ -29,11 +38,16 @@ public class StatBooster : MonoBehaviour
     }
 
     public Image levelUpImage;
+    public Image ultimateImage;
 
     public float levelUpTimer = 60f;
     private float lastLevelUpTime;
 
+    [SerializeField]
     private int skillPointsAvailable = 0;
+
+    [SerializeField]
+    private int ultimatePointsAvailable = 0;
 
     string horizontalAxisName;
     string verticalAxisName;
@@ -57,7 +71,22 @@ public class StatBooster : MonoBehaviour
             LevelUp();
             lastLevelUpTime = Time.time;
         }
-        if (skillPointsAvailable > 0)
+        if(ultimatePointsAvailable > 0)
+        {
+            if(null != ultimateImage)
+            {
+                ultimateImage.enabled = true;
+            }
+            if (axisReset)
+            {
+                ChooseUltimate();
+            }
+            else if (Mathf.Abs(Input.GetAxisRaw(horizontalAxisName)) < .1f && Mathf.Abs(Input.GetAxisRaw(verticalAxisName)) < .1f)
+            {
+                axisReset = true;
+            }
+        }
+        else if (skillPointsAvailable > 0)
         {
             if (axisReset)
             {
@@ -73,6 +102,10 @@ public class StatBooster : MonoBehaviour
             if (null != levelUpImage)
             {
                 levelUpImage.enabled = false;
+            }
+            if (null != ultimateImage)
+            {
+                ultimateImage.enabled = false;
             }
         }
     }
@@ -118,9 +151,56 @@ public class StatBooster : MonoBehaviour
         }
     }
 
+    void ChooseUltimate()
+    {
+        Stat toLevel = Stat.none;
+        axisReset = false;
+        if (Input.GetAxisRaw(horizontalAxisName) > .5f)
+        {
+            toLevel = Stat.atk;
+        }
+        else if (Input.GetAxisRaw(horizontalAxisName) < -.5f)
+        {
+            toLevel = Stat.mov;
+        }
+        else if (Input.GetAxisRaw(verticalAxisName) > .5f)
+        {
+            toLevel = Stat.hp;
+        }
+        else if (Input.GetAxisRaw(verticalAxisName) < -.5f)
+        {
+            toLevel = Stat.rev;
+        }
+        else
+        {
+            axisReset = true;
+        }
+        switch (toLevel)
+        {
+            case Stat.atk:
+                DecreaseAttackTimer(attackIntervalIncrement);
+                break;
+            case Stat.hp:
+                IncreaseLevelRate(levelRateIncrement);
+                break;
+            case Stat.mov:
+                DecreaseAbilityCD(abilityCDIncrement);
+                break;
+            case Stat.rev:
+                IncreaseReviveDistance(reviveDistanceIncrement);
+                break;
+        }
+    }
+
     void LevelUp()
     {
-        Debug.Log("LEVEL"); 
+        Debug.Log("LEVEL");
+        level++;
+        if(level%5 ==0)
+        {
+            health.currentHP = health.maxHP;
+            ultimatePointsAvailable++;
+        }
         if (null != levelUpImage)
         {
             levelUpImage.enabled = true;
@@ -147,9 +227,32 @@ public class StatBooster : MonoBehaviour
         skillPointsAvailable--;
     }
 
-    private void IncreaseReviver(float amount = 0.0002f)
+    private void IncreaseReviver(float amount = 0.05f)
     {
         reviver.reviveRate += amount;
         skillPointsAvailable--;
+    }
+
+    private void IncreaseLevelRate(float ratio = .9f)
+    {
+        levelUpTimer *= ratio;
+        ultimatePointsAvailable--;
+    }
+
+    private void DecreaseAttackTimer(float ratio = .8f)
+    {
+        basicAttackTimer.attackInterval *= ratio;
+        ultimatePointsAvailable--;
+    }
+
+    public void DecreaseAbilityCD(float ratio = .8f)
+    {
+        abilityUser.abilityCDModifier *= ratio;
+        ultimatePointsAvailable--;
+    }
+    public void IncreaseReviveDistance(int amount = 1)
+    {
+        reviver.reviveDistance += amount;
+        ultimatePointsAvailable--;
     }
 }
