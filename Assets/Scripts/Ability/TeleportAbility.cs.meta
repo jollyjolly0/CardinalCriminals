@@ -3,7 +3,9 @@ guid: 43c734dcc5b7cce438a6972c1e79b304
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - HeliLandingPrefab: {instanceID: 0}
+  - teleportSFX: {fileID: 8300000, guid: 1eab76f8fd5d8e74786a589b37de1cd1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

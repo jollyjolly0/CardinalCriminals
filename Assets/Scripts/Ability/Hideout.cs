@@ -13,7 +13,7 @@ public class Hideout : MonoBehaviour
     {
         StartCoroutine(ManageLife());
         audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(hideoutSFX, 0.3f);
+        audioSource.PlayOneShot(hideoutSFX, .5f);
     }
 
     IEnumerator ManageLife()

@@ -77,6 +77,10 @@ public class StatBooster : MonoBehaviour
             {
                 ultimateImage.enabled = true;
             }
+            if (null != levelUpImage)
+            {
+                levelUpImage.enabled = false;
+            }
             if (axisReset)
             {
                 ChooseUltimate();
@@ -88,6 +92,14 @@ public class StatBooster : MonoBehaviour
         }
         else if (skillPointsAvailable > 0)
         {
+            if (null != levelUpImage)
+            {
+                levelUpImage.enabled = true;
+            }
+            if (null != ultimateImage)
+            {
+                ultimateImage.enabled = false;
+            }
             if (axisReset)
             {
                 ChooseBoost();
@@ -122,11 +134,11 @@ public class StatBooster : MonoBehaviour
         {
             toLevel = Stat.mov;
         }
-        else if(Input.GetAxisRaw(verticalAxisName) > .5f)
+        else if (Input.GetAxisRaw(verticalAxisName) < -.5f)
         {
             toLevel = Stat.hp;
         }
-        else if(Input.GetAxisRaw(verticalAxisName) < -.5f)
+        else if (Input.GetAxisRaw(verticalAxisName) > .5f)
         {
             toLevel = Stat.rev;
         }
@@ -163,11 +175,11 @@ public class StatBooster : MonoBehaviour
         {
             toLevel = Stat.mov;
         }
-        else if (Input.GetAxisRaw(verticalAxisName) > .5f)
+        else if (Input.GetAxisRaw(verticalAxisName) < -.5f)
         {
             toLevel = Stat.hp;
         }
-        else if (Input.GetAxisRaw(verticalAxisName) < -.5f)
+        else if (Input.GetAxisRaw(verticalAxisName) > .5f)
         {
             toLevel = Stat.rev;
         }
@@ -181,6 +193,7 @@ public class StatBooster : MonoBehaviour
                 DecreaseAttackTimer(attackIntervalIncrement);
                 break;
             case Stat.hp:
+                Debug.Log("LEVEL RATE");
                 IncreaseLevelRate(levelRateIncrement);
                 break;
             case Stat.mov:
@@ -194,16 +207,11 @@ public class StatBooster : MonoBehaviour
 
     void LevelUp()
     {
-        Debug.Log("LEVEL");
         level++;
-        if(level%5 ==0)
+        if (level % 5 == 0)
         {
             health.currentHP = health.maxHP;
             ultimatePointsAvailable++;
-        }
-        if (null != levelUpImage)
-        {
-            levelUpImage.enabled = true;
         }
         skillPointsAvailable++;
         health.currentHP += hpRestore;
@@ -235,7 +243,9 @@ public class StatBooster : MonoBehaviour
 
     private void IncreaseLevelRate(float ratio = .9f)
     {
+        Debug.Log($"Timer before: {levelUpTimer}");
         levelUpTimer *= ratio;
+        Debug.Log($"Timer after: {levelUpTimer}");
         ultimatePointsAvailable--;
     }
 
