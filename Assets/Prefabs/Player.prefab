@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb81c2c1a33e95b4d96dade75d7da0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
 --- !u!114 &6672617117885447072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +684,7 @@ MonoBehaviour:
   ability:
   - {fileID: 11400000, guid: b17c762e68d76e14697bbc6b0fc0fd8d, type: 2}
   - {fileID: 11400000, guid: 1a4a2220ede4d3c48b5a25cfe7fe62bb, type: 2}
+  abilityCDModifier: 1
 --- !u!114 &1720703438420419874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,13 +713,22 @@ MonoBehaviour:
   movement: {fileID: 1006948701646775851}
   attack: {fileID: 4175299049834909745}
   reviver: {fileID: 660105353222038967}
+  basicAttackTimer: {fileID: 6344063542455375385}
+  abilityUser: {fileID: 225595654726106105}
   healthIncrement: 1
-  movementIncrement: 0.25
+  movementIncrement: 0.5
   attackIncrement: 1
   reviveIncrement: 0.05
+  levelRateIncrement: 0.9
+  abilityCDIncrement: 0.8
+  attackIntervalIncrement: 0.8
+  reviveDistanceIncrement: 1
   hpRestore: 2
   levelUpImage: {fileID: 0}
+  ultimateImage: {fileID: 0}
   levelUpTimer: 60
+  skillPointsAvailable: 0
+  ultimatePointsAvailable: 0
 --- !u!1 &7033352849283438742
 GameObject:
   m_ObjectHideFlags: 0
