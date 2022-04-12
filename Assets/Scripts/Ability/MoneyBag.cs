@@ -5,10 +5,15 @@ using UnityEngine;
 public class MoneyBag : MonoBehaviour
 {
     public float duration;
+    public AudioClip bagDropSFX;
+
+    private AudioSource audioSource;
 
     private void Start()
     {
         StartCoroutine(ManageLife());
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(bagDropSFX);
     }
 
     IEnumerator ManageLife()
