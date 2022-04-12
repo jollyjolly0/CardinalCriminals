@@ -939,6 +939,7 @@ MonoBehaviour:
   movement: {fileID: 1006948701646775851}
   attack: {fileID: 4175299049834909745}
   reviver: {fileID: 660105353222038967}
+  hpRestore: 2
   levelUpImage: {fileID: 0}
   levelUpTimer: 60
 --- !u!1 &7033352849283438742
