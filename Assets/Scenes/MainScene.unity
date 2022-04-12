@@ -1008,7 +1008,7 @@ PrefabInstance:
     - target: {fileID: 1785860992834902318, guid: 20e79592c17edb944a48c491d2fbdbb0, type: 3}
       propertyPath: ultimateImage
       value: 
-      objectReference: {fileID: 1828018776}
+      objectReference: {fileID: 497877348}
     - target: {fileID: 2184379011040610173, guid: 20e79592c17edb944a48c491d2fbdbb0, type: 3}
       propertyPath: reviveRate
       value: 0.05
