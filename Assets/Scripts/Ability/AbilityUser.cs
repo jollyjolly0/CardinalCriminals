@@ -5,7 +5,7 @@ using UnityEngine;
 public class AbilityUser : MonoBehaviour
 {
     public BaseAbility[] ability;
-
+    private float[] lastUsedAt;// = Mathf.NegativeInfinity;
     string inputButtonA;
     string inputButtonB;
 
@@ -19,6 +19,12 @@ public class AbilityUser : MonoBehaviour
         inputButtonB = "AbilityB" + GetComponent<Player>().playerNumber.ToString();
 
         health = GetComponent<Health>();
+
+        for (int i = 0; i < 2; i++)
+        {
+            lastUsedAt[i] = Mathf.NegativeInfinity;
+
+        }
     }
 
     private void Update()
@@ -35,12 +41,12 @@ public class AbilityUser : MonoBehaviour
         }
     }
 
-    private float lastUsedAt = Mathf.NegativeInfinity;
+   
     private void TryUseAbility(int abilitynum)
     {
-        if (Time.time > lastUsedAt + ability[abilitynum].cooldown*abilityCDModifier)
+        if (Time.time > lastUsedAt[abilitynum] + ability[abilitynum].cooldown*abilityCDModifier)
         {
-            lastUsedAt = Time.time;
+            lastUsedAt[abilitynum] = Time.time;
 
             ability[abilitynum]?.UseAbility(gameObject);
         }
