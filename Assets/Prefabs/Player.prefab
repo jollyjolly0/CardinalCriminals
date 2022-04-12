@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b940acf2d0868940860800dc4ff4d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackInterval: 1.8
+  attackInterval: 1.666666
   activeDuration: 0.2
   basicAttack: {fileID: 122546166}
   audioSource: {fileID: 2810993061985424480}
