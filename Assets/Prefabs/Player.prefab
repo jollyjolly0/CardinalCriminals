@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75270a40a86b7b469033998333d66c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reviveRate: 0.0005
+  reviveRate: 0.05
   reviveDistance: 1
 --- !u!114 &225595654726106105
 MonoBehaviour:
@@ -713,6 +713,10 @@ MonoBehaviour:
   movement: {fileID: 1006948701646775851}
   attack: {fileID: 4175299049834909745}
   reviver: {fileID: 660105353222038967}
+  healthIncrement: 1
+  movementIncrement: 0.25
+  attackIncrement: 1
+  reviveIncrement: 0.05
   hpRestore: 2
   levelUpImage: {fileID: 0}
   levelUpTimer: 60
