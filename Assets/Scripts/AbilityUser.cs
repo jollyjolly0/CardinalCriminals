@@ -8,13 +8,19 @@ public class AbilityUser : MonoBehaviour
 
     string inputButton;
 
+    Health health;
+
     private void Awake()
     {
         inputButton = "Ability" + GetComponent<Player>().playerNumber.ToString();
+
+        health = GetComponent<Health>();
     }
 
     private void Update()
     {
+        if (!health.isAlive) { return;  }
+
         if (Input.GetButtonDown(inputButton))
         {
             TryUseAbility();
