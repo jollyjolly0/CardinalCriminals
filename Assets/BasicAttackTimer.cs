@@ -8,6 +8,8 @@ public class BasicAttackTimer : MonoBehaviour
     public float activeDuration = 0.05f;
 
     public GameObject basicAttack;
+    public AudioSource audioSource;
+    public AudioClip whip;
 
     private Health health;
     private BasicAttackAimer aimer;
@@ -56,6 +58,7 @@ public class BasicAttackTimer : MonoBehaviour
 
             aimer.canAim = false;
             basicAttack.SetActive(true);
+            audioSource.PlayOneShot(whip);
 
             yield return new WaitForSeconds(activeDuration);
 
