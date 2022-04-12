@@ -30,7 +30,9 @@ public class EnemySpawner : MonoBehaviour
     public float eastYMin;
     public float eastYMax;
 
-    public int currentLevel;
+    public float timeToIncreaseLevel;
+    private float lastLevelIncrease;
+    private int currentLevel =1;
     private int maxLevel;
 
     public float currentWeight = 5f;
@@ -51,6 +53,11 @@ public class EnemySpawner : MonoBehaviour
         {
             currentWeight += rampScale;
             lastRamp = Time.time;
+        }
+        if(currentLevel <maxLevel && Time.time> timeToIncreaseLevel+lastLevelIncrease)
+        {
+            currentLevel++;
+            lastLevelIncrease = Time.time;
         }
     }
 

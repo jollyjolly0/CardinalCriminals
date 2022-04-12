@@ -67,8 +67,8 @@ MonoBehaviour:
   eastXVal: 11
   eastYMin: -11
   eastYMax: 11
-  currentLevel: 2
-  currentWeight: 5
+  timeToIncreaseLevel: 30
+  currentWeight: 2
 --- !u!61 &2031871553
 BoxCollider2D:
   m_ObjectHideFlags: 0
