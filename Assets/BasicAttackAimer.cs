@@ -24,8 +24,8 @@ public class BasicAttackAimer : MonoBehaviour
     }
 
     const float offset = 2.5f;
-    const float scaleLong = 3f;
-    const float scaleShort = 2f;
+    const float scaleLong = 1f;
+    const float scaleShort = 1f;
 
     [HideInInspector]
     public bool canAim = true;
@@ -37,13 +37,11 @@ public class BasicAttackAimer : MonoBehaviour
         {
             if (Input.GetAxisRaw("Horizontal1") < 0)
             {
-                attackTransform.localPosition = new Vector3(-offset, 0, 1);
                 attackTransform.localScale = new Vector3(-scaleLong, scaleShort, 1);
                 attack.direction = Vector2.left;
             }
             if (Input.GetAxisRaw("Horizontal1") > 0)
             {
-                attackTransform.localPosition = new Vector3(offset, 0, 1);
                 attackTransform.localScale = new Vector3(scaleLong, scaleShort, 1);
                 attack.direction = Vector2.right;
             }
@@ -52,13 +50,11 @@ public class BasicAttackAimer : MonoBehaviour
         {
             if (Input.GetAxisRaw("Vertical2") < 0)
             {
-                attackTransform.localPosition = new Vector3(0, -offset, 1);
                 attackTransform.localScale = new Vector3(-scaleLong, scaleShort, 1);
                 attack.direction = Vector2.down;
             }
             if (Input.GetAxisRaw("Vertical2") > 0)
             {
-                attackTransform.localPosition = new Vector3(0, offset, 1);
                 attackTransform.localScale = new Vector3(scaleLong, scaleShort, 1);
                 attack.direction = Vector2.up;
             }
