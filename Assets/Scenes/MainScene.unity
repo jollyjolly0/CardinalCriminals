@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 1828018776}
     - target: {fileID: 1785860992834902318, guid: 20e79592c17edb944a48c491d2fbdbb0, type: 3}
       propertyPath: levelUpTimer
-      value: 10
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5467570725320104295, guid: 20e79592c17edb944a48c491d2fbdbb0, type: 3}
       propertyPath: m_Name
@@ -906,7 +906,7 @@ PrefabInstance:
       objectReference: {fileID: 938911784}
     - target: {fileID: 1130953731154754532, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: levelUpTimer
-      value: 10
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6672617117885447074, guid: 7b8ef09fcc1d2a94db80bb61a5f41fbb, type: 3}
       propertyPath: m_RootOrder
