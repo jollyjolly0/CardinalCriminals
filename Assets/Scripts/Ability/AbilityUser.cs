@@ -9,6 +9,8 @@ public class AbilityUser : MonoBehaviour
     string inputButtonA;
     string inputButtonB;
 
+    public float abilityCDModifier = 1f;
+
     Health health;
 
     private void Awake()
@@ -42,7 +44,7 @@ public class AbilityUser : MonoBehaviour
    
     private void TryUseAbility(int abilitynum)
     {
-        if (Time.time > lastUsedAt[abilitynum] + ability[abilitynum].cooldown)
+        if (Time.time > lastUsedAt[abilitynum] + ability[abilitynum].cooldown*abilityCDModifier)
         {
             lastUsedAt[abilitynum] = Time.time;
 

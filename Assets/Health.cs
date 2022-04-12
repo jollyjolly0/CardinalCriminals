@@ -14,6 +14,10 @@ public class Health : MonoBehaviour
         }
         set {
             _currentHP = value;
+            if (_currentHP > maxHP)
+            {
+                _currentHP = maxHP;
+            }
             if (null != uiHealthbar) {
                 float fillAmount = (float)_currentHP / maxHP;
                 uiHealthbar.fill = fillAmount;
