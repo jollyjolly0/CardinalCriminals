@@ -1,17 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    private int _currentHP;
 
     public int maxHP;
-    public int currentHP;
+    public int currentHP {
+        get {
+            return _currentHP;
+        }
+        set {
+            _currentHP = value;
+            if (null != healthbarFill) {
+                float fillAmount = (float)_currentHP / maxHP;
+                healthbarFill.fillAmount = fillAmount;
+                healthbar.gameObject.SetActive(fillAmount < 1);
+                healthbarDeath.gameObject.SetActive(fillAmount <= 0);
+            }
+        }
+    }
 
     public bool isAlive = true;
 
     public List<DamageSource.Source> vulnerabilities;
 
+    public Image healthbar;
+    public Image healthbarFill;
+    public Image healthbarDeath;
 
     public delegate void OnDeath();
     public event OnDeath onDeath;
@@ -27,6 +45,7 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
+        currentHP = maxHP;
         recentHitters = new Dictionary<GameObject, float>();
 
         var hurtboxes = GetComponentsInChildren<HurtBox>();
@@ -110,6 +129,8 @@ public class Health : MonoBehaviour
         Debug.Log("Revived");
         isAlive = true;
         onRevive?.Invoke();
+
+        currentHP = maxHP / 2;
     }
 
 
