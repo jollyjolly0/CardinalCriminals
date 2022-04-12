@@ -17,8 +17,7 @@ public class AbilityUser : MonoBehaviour
     {
         if (Input.GetButtonDown(inputButton))
         {
-            ability?.UseAbility(gameObject);
-            if (!ability) { Debug.LogWarning("no ability bound"); }
+            TryUseAbility();
         }
     }
 
